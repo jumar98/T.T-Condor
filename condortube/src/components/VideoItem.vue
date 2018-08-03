@@ -5,11 +5,17 @@
     -->
     <div class="mb-5 container row">
             <div class="col-md-4">
-                <img class="card-img-top" width="400" height="200" v-bind:src="videoImage" v-bind:title="videoTitle">
+                <!--
+                    Link to video-detail component,
+                    we pass params id and video
+                -->
+                <router-link :to="{name:'video-detail', params:{id: video.id.videoId, video: video}}">
+                    <img class="card-img-top" width="400" height="200" v-bind:src="videoImage" v-bind:title="videoTitle">
+                </router-link>
             </div>
             <div class="col-md-8">
                 <h5 class="">{{videoTitle}}</h5>
-                <p>{{channelTitle}}</p>
+                <small><p>{{channelTitle}}</p></small>
                 <p class="">{{videoDescription}}</p>
             </div>
     </div>

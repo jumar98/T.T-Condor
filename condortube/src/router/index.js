@@ -2,7 +2,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import CondorTubeDashboard from '@/components/CondorTubeDashboard'
-
+import VideoDetail from '@/components/VideoDetail';
 //Set Router module to use on vue 
 Vue.use(Router)
 
@@ -10,10 +10,7 @@ Vue.use(Router)
 //foreach route
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'CondorTubeDashboard',
-      component: CondorTubeDashboard
-    }
+    { path: '/', name: 'condortube-dashboard', component: CondorTubeDashboard },
+    { path: '/video/:id', name: 'video-detail', component: VideoDetail }
   ]
 })

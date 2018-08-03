@@ -23,7 +23,7 @@
 
 <script>
     //Import seacrh module
-    import search from '../search/search';  
+    import { search } from '../search/search';  
     export default{
         data(){
             return{

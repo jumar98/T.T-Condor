@@ -24,7 +24,7 @@
     //Import child components
     import SearchBar from './SearchBar';
     import VideoList from './VideoList';
-    import search from '../search/search';
+    import { search } from '../search/search';
     
     export default{
     
@@ -74,3 +74,6 @@
         }
     }
 </script>
+
+
+

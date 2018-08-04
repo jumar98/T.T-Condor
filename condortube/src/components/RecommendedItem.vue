@@ -1,7 +1,9 @@
 <template>
     <div class="row mb-2">
         <div class="col-sm-6">
-            <img class="card-img-top" width="120" height="100" v-bind:src="videoImage" v-bind:title="videoTitle">
+            <router-link :to="{name:'video-detail', params:{id: video.id.videoId, video: video}}">
+                <img class="card-img-top" width="120" height="100" v-bind:src="videoImage" v-bind:title="videoTitle">
+            </router-link>
         </div>
         <div class="col-sm-6">
             <p>{{videoTitle}}</p>

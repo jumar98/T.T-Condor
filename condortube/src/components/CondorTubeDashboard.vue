@@ -3,20 +3,22 @@
 <!-- 
     This template show child components, 
     like, VideoItem, VideoList and SeachBar
--->      
-    <div class="mt-5">
-        <search-bar></search-bar>
-        <!--Show videos if loading is false -->
-        <div v-if="!loading">
-            <br><br>
-            <!--
-                Pass videos to prop videos on 
-                video-list component
-            -->
-            <video-list :videos="videos"></video-list>
+--> 
+    <div>
+        <div class="mt-5">
+            <search-bar></search-bar>
+            <!--Show videos if loading is false -->
+            <div v-if="!loading">
+                <br><br>
+                <!--
+                    Pass videos to prop videos on 
+                    video-list component
+                -->
+                <video-list :videos="videos"></video-list>
+            </div>
+            <!--Show loading if loading data is false -->
+            <div v-if="loading">Loading...</div>
         </div>
-        <!--Show loading if loading data is false -->
-        <div v-if="loading">Loading...</div>
     </div>
 </template>
 
@@ -31,9 +33,7 @@
         created() {
         //Here, first get results about search default
             search({
-               key: 'AIzaSyASSJNgzHQQDmhotVtZZwUbDGibRw7OQCc',
-               term: 'Php',
-               item: 10 
+               term: 'Php'
             }, response => this.handleSearchResults(response));
         
         //Listen event search-started and set loading to true

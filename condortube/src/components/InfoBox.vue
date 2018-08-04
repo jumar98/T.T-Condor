@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-2">
+    <div id="info_box" class="mt-2 container">
         <h2>{{videoTitle}}</h2>
         <p>{{channelTitle}}</p>
         <small>
@@ -34,3 +34,9 @@
         }
     }
 </script>
+
+<style>
+    #info_box{
+        background-color: #b0ecde;
+    }
+</style>

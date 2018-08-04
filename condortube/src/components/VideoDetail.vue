@@ -46,6 +46,25 @@
                 id: this.videoId
             }, response => this.handleRelatedVideoResult(response));
         },
+        mounted() {
+            if(this.$route.params.id === undefined){
+                this.$router.push({name: 'condortube-dashboard' });
+            }
+        },
+        //Update data when choose a recommended video
+        updated() {
+            this.videoId = this.$route.params.id;
+            this.url = `https://youtube.com/embed/${this.videoId}`;
+            this.video = this.$route.params.video;
+
+            statistics({
+                id: this.videoId,
+            }, response => this.handleViewsResult(response));
+
+            recommended({
+                id: this.videoId
+            }, response => this.handleRelatedVideoResult(response));
+        },
         //Set up data
         data(){
             return{

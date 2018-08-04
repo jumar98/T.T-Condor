@@ -1,6 +1,9 @@
 <template>
     <!--Show video if exist-->
     <div class="row container mt-5" v-if="video">
+        <div class="col-sm-12 mb-3">
+           <bar></bar> 
+        </div>
         <div class="col-sm-8 col-sm-push-2">
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe v-bind:src="url" class="embed-responsive-item" frameborder="0"></iframe>
@@ -8,13 +11,18 @@
             <!--Show video details-->
             <info-box :video="video" :statistics="statistics"></info-box>
         </div>
+        <div class="col-sm-4">
+            <recommended-video :videos="recommended"></recommended-video>
+        </div>
     </div>
 </template>
 
 <script>
     //Import module and component necessary
-    import { statistics } from '../search/search';
+    import { statistics, recommended } from '../search/search';
     import InfoBox from './InfoBox';
+    import RecommendedVideo from './RecommendedVideo';
+    import Bar from './Bar';
     export default{
         //If id params is undifined, comeback to 
         //condortube-dashboard  
@@ -31,9 +39,12 @@
             this.video = this.$route.params.video;
 
             statistics({
-                key:'AIzaSyASSJNgzHQQDmhotVtZZwUbDGibRw7OQCc',
                 id: this.videoId,
             }, response => this.handleViewsResult(response));
+
+            recommended({
+                id: this.videoId
+            }, response => this.handleRelatedVideoResult(response));
         },
         //Set up data
         data(){
@@ -41,18 +52,22 @@
                 videoId: null,
                 video: null,
                 url: null,
-                statistics: null
+                statistics: null,
+                recommended: null
             }
         },
         //Pass result of statistics to statistics data
         methods:{
             handleViewsResult(result){
                 this.statistics = result;
+            },
+            handleRelatedVideoResult(result){
+                this.recommended = result;
             }
         },
-        //Set InfoBox component
+        //Set child components
         components:{
-            InfoBox
+            InfoBox, RecommendedVideo, Bar
         }
     }
 </script>

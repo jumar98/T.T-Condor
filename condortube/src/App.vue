@@ -3,8 +3,13 @@
     Set router-view for show component of
     each route
 -->
+  <div>
+    <div class="col-md-12 bd">
+        <img src="./assets/CondorTube-logo.png" alt="">
+    </div>
   <div id="app" class="container">
     <router-view/>
+  </div>
   </div>
 </template>
 
@@ -16,4 +21,8 @@ export default {
 }
 </script>
 
-
+<style>
+    .bd{
+        background-color: #99C2EC;
+    }
+</style>

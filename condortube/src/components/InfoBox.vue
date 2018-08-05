@@ -3,13 +3,13 @@
         <h2>{{videoTitle}}</h2>
         <p>{{channelTitle}}</p>
         <small>
-            <p style="color:grey">
+            <p class="gray">
             {{new Intl.NumberFormat().format(statistics.viewCount)}} views
             {{new Intl.NumberFormat().format(statistics.likeCount)}} likes
             {{new Intl.NumberFormat().format(statistics.dislikeCount)}} dislikes
             </p>
         </small>
-        <small style="color:grey">{{videoDescription}}</small>
+        <small class="gray">{{videoDescription}}</small>
     </div>
 </template>
 
@@ -37,6 +37,10 @@
 
 <style>
     #info_box{
-        background-color: #b0ecde;
+        background-color: #99C2EC;
+    }
+
+    .gray{
+        color: gray;
     }
 </style>

@@ -24,6 +24,6 @@
 
 <style>
     #recommended_board{
-        background-color:#b0ecde;
+        background-color:#99C2EC;
     }
 </style>

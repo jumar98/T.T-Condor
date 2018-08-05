@@ -2,15 +2,14 @@ import express from 'express';
 import routes from './src/routes/providerRoute'
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import config from './config';
 
 //Invoke express object to create app
 const app = express();
-//Define port
-const PORT = 3000;
 
 //mongoose connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://foundation123:foundation123@ds125146.mlab.com:25146/foundation-test1',{
+mongoose.connect(config.db,{
     useNewUrlParser: true
 });
 
@@ -22,6 +21,6 @@ app.use(bodyParser.json());
 routes(app);
 
 //Listen port where running api 
-app.listen(PORT, () =>{
-    console.log(`Your server running on port ${PORT}`)
+app.listen(config.port, () =>{
+    console.log(`Your server running on port ${config.port}`)
 });

@@ -4,6 +4,12 @@ const Schema = mongoose.Schema;
 
 //Create schema from collection provider of database
 export const ProviderSchema = new Schema({
+    name:{
+        type: String
+    },
+    lastname:{
+        type: String
+    },
     status:{
         type: String
     },

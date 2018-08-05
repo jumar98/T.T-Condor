@@ -44,7 +44,7 @@ export const updateProvider = (req, res) => {
             res.send(err);
         }
         res.json(provider);
-    })
+    });
 }
 
 //This method delete a provider and return a confirmation message 

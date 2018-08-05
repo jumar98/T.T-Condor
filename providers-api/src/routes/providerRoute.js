@@ -6,26 +6,34 @@ import {
     getProviderById,
     deleteProvider 
     } from '../controllers/providerController';
+import auth from '../middlewares/auth';
+import {userLogin, userRegister} from '../controllers/userController';
+
 const routes = (app) => {
 
+    //Endpoint users
+    app.post('/user/register', userRegister);
+    app.post('/user/login', userLogin);
+
+    /*
+        The routes routes  is protected with 
+        auth middleware
+    */
+
     //Get all providers 
-    app.route('/providers')
-    .get(getProviders);
+    app.get('/providers', auth, getProviders);
     
     //Add one provider 
-    app.route('/provider/add')
-    .post(addNewProvider);
+    app.post('/provider/add', auth, addNewProvider);
 
     //This route is common to all endpoints
-    app.route('/provider/:providerId')
-    //Get one provider
-    .get(getProviderById)
+    app.get('/provider/:providerId', auth, getProviderById);
 
     //Updete fields from a provider 
-    .put(updateProvider)
+    app.put('/provider/:providerId', auth, updateProvider)
     
     //Delete a provider
-    .delete(deleteProvider);
+    app.delete('/provider/:providerId', auth, deleteProvider);
 };
 
 //Export module

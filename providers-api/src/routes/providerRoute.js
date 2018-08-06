@@ -16,7 +16,7 @@ const routes = (app) => {
     app.post('/user/login', userLogin);
 
     /*
-        The routes routes  is protected with 
+        The routes below is protected with 
         auth middleware
     */
 

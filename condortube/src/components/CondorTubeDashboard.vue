@@ -33,7 +33,7 @@
         created() {
         //Here, first get results about search default
             search({
-               term: 'Php'
+               term: 'node js'
             }, response => this.handleSearchResults(response));
         
         //Listen event search-started and set loading to true

@@ -1,6 +1,6 @@
 # CondorTube
 
-CondorTube is a little wep app to recreate Youtube basic functionality: search videos, display the results in a list, have a detail page where you can reproduce the selected video and show its info and show recommended videos list.
+CondorTube is a little wep app to recreate Youtube basic functionality: search videos, display the results in a list, have a detail page where you can reproduce the selected video, show its info and recommended videos list.
 
 
 ## Requirements

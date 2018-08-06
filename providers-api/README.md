@@ -47,14 +47,28 @@ First run:
 $ npm start  
 ```
 
-Then we tried any route in postman:
-Imagen
+Then we tried any route in postman `localhost:3000/<path>`:
 
-Well, fires we must be authenticated, for that we place the `user/register` path with the user's data in the body and the request must be post, send and receive the token.
-imagen
+![image](https://user-images.githubusercontent.com/28226268/43695997-7e5adb3a-9901-11e8-805a-eb4f858e2070.png)
+
+
+Well, first we must be authenticated, for that we place the `user/register` path with the user's data in the body and the request must be post:
+
+![image](https://user-images.githubusercontent.com/28226268/43696077-e1cedb12-9901-11e8-9376-5fb32483d4eb.png)
+
+When you are register, receive the token to access to providers routes:
+
+![image](https://user-images.githubusercontent.com/28226268/43696176-6cebfc34-9902-11e8-9887-5b85c1cc7a49.png)
+
 
 ALL providers request must be authenticated with a valid token, otherwise they will be invalid. We must put in the authorization header, `Bearer <YOUR_TOKEN>` and then if you can make any request to the provider routes.
-image
+
+We test `/providers` route:
+
+![image](https://user-images.githubusercontent.com/28226268/43696296-ecadc13c-9902-11e8-80e4-be5e122459d8.png)
+
+![image](https://user-images.githubusercontent.com/28226268/43696319-092e5862-9903-11e8-8b0c-912f3f21986a.png)
+
 
 ## Author
 
@@ -63,4 +77,3 @@ image
 ## License
 
 This project is under the license (MIT) - see the file LICENSE.md for details
-

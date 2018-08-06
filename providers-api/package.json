@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./index.js --exec babel-node -e js"
   },
-  "author": "",
+  "author": "Julian David Martinez Villarreal",
   "license": "MIT",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",

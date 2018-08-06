@@ -1,21 +1,36 @@
-# condortube
+# CondorTube
 
-> A Vue.js project
+CondorTube is a little wep app to recreate Youtube basic functionality: search videos, display the results in a list, have a detail page where you can reproduce the selected video and show its info and show recommended videos list.
 
-## Build Setup
 
-``` bash
-# install dependencies
-npm install
+## Requirements
+- Node >= 6.0.0
+- Axios 0.18.0
+- Bootstrap 4.1.3
+- jquery 3.3.1
+- vue 2.5.2
+- vue-router 3.0.1
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Installation
 
-# build for production with minification
-npm run build
+Install the dependencies and devDependencies and start the server.
 
-# build for production and view the bundle analyzer report
-npm run build --report
+```sh
+$ cd condortube
+$ npm install 
+$ npm start
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Developed with
+- vue-cli
+- webpack
+
+## Author
+
+- ***Julian David Martinez Villarreal***
+
+## License
+
+This project is under the license (MIT) - see the file LICENSE.md for details
+
+ 
